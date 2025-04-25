@@ -1,5 +1,5 @@
 import { FetchError } from "@medusajs/js-sdk"
-import { HttpTypes } from "@medusajs/types"
+import { AdminUser as MedusaAdminUser, HttpTypes, AdminStore } from "@medusajs/types"
 import {
     QueryKey,
     UseQueryOptions,
@@ -9,22 +9,30 @@ import { sdk } from "../../lib/config"
 import { queryKeysFactory } from "../../lib/query-key-factory"
 
 const USERS_QUERY_KEY = "users" as const
-const usersQueryKeys = {
+export const usersQueryKeys = {
     ...queryKeysFactory(USERS_QUERY_KEY),
     me: () => [USERS_QUERY_KEY, "me"],
+}
+
+export interface AdminUser extends MedusaAdminUser {
+    store: AdminStore;
+}
+
+export interface AdminUserResponse {
+    user: AdminUser;
 }
 
 export const useMe = (
     query?: HttpTypes.AdminUserParams,
     options?: UseQueryOptions<
-        HttpTypes.AdminUserResponse,
+        AdminUserResponse,
         FetchError,
-        HttpTypes.AdminUserResponse,
+        AdminUserResponse,
         QueryKey
     >
 ) => {
     const { data, ...rest } = useQuery({
-        queryFn: () => sdk.admin.user.me(query),
+        queryFn: () => sdk.admin.user.me(query) as Promise<AdminUserResponse>,
         queryKey: usersQueryKeys.me(),
         ...options,
     })
