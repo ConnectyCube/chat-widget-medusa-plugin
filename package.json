@@ -79,9 +79,9 @@
   "dependencies": {
     "@connectycube/chat-widget": "^0.24.0",
     "connectycube": "^4.3.0",
-    "@medusajs/icons": "^^2.7.0",
-    "@medusajs/js-sdk": "^^2.7.0",
-    "@medusajs/types": "^^2.7.0",
+    "@medusajs/icons": "^2.7.0",
+    "@medusajs/js-sdk": "^2.7.0",
+    "@medusajs/types": "^2.7.0",
     "react-router-dom": "6.20.1"
   }
 }

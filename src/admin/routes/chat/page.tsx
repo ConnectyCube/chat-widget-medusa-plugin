@@ -4,21 +4,19 @@ import ConnectyCubeChatWidget from '@connectycube/chat-widget';
 import { Container } from "@medusajs/ui";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
-import { useMe, usersQueryKeys } from "../../hooks/api/users";
+import { useStore } from "../../hooks/api/store";
 
 const Chat = () => {
   const navigate = useNavigate()
-  const { user, isLoading } = useMe({fields: '*store'}, { queryKey: usersQueryKeys.me(), refetchOnMount: "always" })
-
-  console.log("user", user);
+  const { store, isLoading } = useStore({fields: 'id,name'}, { refetchOnMount: "always" })
   
   useEffect(() => {
-    if (!user && !isLoading) {
+    if (!store && !isLoading) {
       navigate("/404");
     }
-  }, [user, navigate]);
+  }, [store, navigate]);
 
-  if (isLoading || !user?.store?.name) {
+  if (isLoading || !store) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <Spinner className="text-ui-fg-interactive animate-spin" />
@@ -52,9 +50,8 @@ const Chat = () => {
       <ConnectyCubeChatWidget   
         appId={import.meta.env.VITE_CHAT_APP_ID}
         authKey={import.meta.env.VITE_CHAT_AUTH_KEY}
-        userId={user?.store?.id}
-        userName={user?.store?.name}
-        userAvatar={user?.avatar_url || undefined}
+        userId={store.id}
+        userName={store.name}
         splitView={true}
         open={true}
         hideWidgetButton={true}
