@@ -1,9 +1,9 @@
 {
   "name": "@connectycube/chat-widget-medusa-plugin",
   "version": "0.10.0",
-  "description": "A starter for Medusa plugins.",
-  "author": "Medusa (https://medusajs.com)",
-  "license": "MIT",
+  "description": "A chat widget Medusa plugin",
+  "author": "Connectycube",
+  "license": "Apache 2.0",
   "files": [
     ".medusa/server"
   ],
