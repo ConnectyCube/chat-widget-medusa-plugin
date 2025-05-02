@@ -1,6 +1,6 @@
 {
   "name": "@connectycube/chat-widget-medusa-plugin",
-  "version": "0.0.1",
+  "version": "0.10.0",
   "description": "A starter for Medusa plugins.",
   "author": "Medusa (https://medusajs.com)",
   "license": "MIT",
@@ -33,11 +33,11 @@
     "prepublishOnly": "medusa plugin:build"
   },
   "devDependencies": {
-    "@medusajs/admin-sdk": "^2.7.0",
-    "@medusajs/cli": "^2.7.0",
-    "@medusajs/framework": "^2.7.0",
-    "@medusajs/medusa": "^2.7.0",
-    "@medusajs/test-utils": "^2.7.0",
+    "@medusajs/admin-sdk": "^2.7.1",
+    "@medusajs/cli": "^2.7.1",
+    "@medusajs/framework": "^2.7.1",
+    "@medusajs/medusa": "^2.7.1",
+    "@medusajs/test-utils": "^2.7.1",
     "@medusajs/ui": "4.0.4",
     "@mikro-orm/cli": "6.4.3",
     "@mikro-orm/core": "6.4.3",
@@ -59,11 +59,11 @@
     "yalc": "^1.0.0-pre.53"
   },
   "peerDependencies": {
-    "@medusajs/admin-sdk": "^2.7.0",
-    "@medusajs/cli": "^2.7.0",
-    "@medusajs/framework": "^2.7.0",
-    "@medusajs/medusa": "^2.7.0",
-    "@medusajs/test-utils": "^2.7.0",
+    "@medusajs/admin-sdk": "^2.7.1",
+    "@medusajs/cli": "^2.7.1",
+    "@medusajs/framework": "^2.7.1",
+    "@medusajs/medusa": "^2.7.1",
+    "@medusajs/test-utils": "^2.7.1",
     "@medusajs/ui": "4.0.3",
     "@mikro-orm/cli": "6.4.3",
     "@mikro-orm/core": "6.4.3",
@@ -77,11 +77,11 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@connectycube/chat-widget": "^0.24.0",
+    "@connectycube/chat-widget": "^0.25.0",
     "connectycube": "^4.3.0",
-    "@medusajs/icons": "^2.7.0",
-    "@medusajs/js-sdk": "^2.7.0",
-    "@medusajs/types": "^2.7.0",
+    "@medusajs/icons": "^2.7.1",
+    "@medusajs/js-sdk": "^2.7.1",
+    "@medusajs/types": "^2.7.1",
     "react-router-dom": "6.20.1"
   }
 }

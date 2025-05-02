@@ -24,7 +24,7 @@ const Chat = () => {
     )
   }
 
-  const myStyles: React.CSSProperties = {
+  const embedViewStyles: React.CSSProperties = {
     position: 'relative',
     display: 'flex',
     right: '0',
@@ -32,17 +32,6 @@ const Chat = () => {
     minWidth: '100%',
     minHeight: '100%',
     zIndex: '0',
-  };
-
-  const quickActions = {
-    title: 'Quick Actions',
-    description: 'Select an action from the options below or type a first message to start a conversation.',
-    actions: [
-      'Hello there!',
-      'How are you doing today?',
-      'What features of the ConnectyCube SDK do you find most useful and how have they improved your development process?',
-      'Goodbye and take care!',
-    ],
   };
 
   return (
@@ -55,8 +44,9 @@ const Chat = () => {
         splitView={true}
         open={true}
         hideWidgetButton={true}
-        portalStyle={myStyles}
-        quickActions={quickActions}
+        portalStyle={embedViewStyles}
+        onUnreadCountChange={(count: number) => console.log('unread messages count:', count)}
+        onOnlineUsersCountChange={(count: number) => console.log('online users count:', count)}
       />
     </Container>
   )
