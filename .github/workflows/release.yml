@@ -26,10 +26,10 @@ jobs:
             registry-url: 'https://registry.npmjs.org'
         
       - name: Run npm install
-        run: npm ci
+        run: yarn
         
       - name: Run npm build
-        run: npm run build
+        run: yarn build
 
       - name: Publish
         run: npm publish --access public
