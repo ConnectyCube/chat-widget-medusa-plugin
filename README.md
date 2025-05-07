@@ -198,11 +198,36 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
      }
    }
    ```
+5. update `src/lib/data/products.ts`, `listProducts` function to return product's store fields:
 
-4. Connect `ChatWidget` component on product details page, e.g. `src/modules/products/templates/index.tsx`
-   
+   ```
+   fields: "*variants.calculated_price,+variants.inventory_quantity,+metadata,+tags,+*store",
    ```
 
+6. update `storefront/src/app/[countryCode]/(main)/products/[handle]/page.tsx` to retrieve customer info and pass it to `ProductTemplate`:
+
+   ```
+   const customer = await retrieveCustomer()
+   return (
+     <ProductTemplate
+       product={pricedProduct}
+       region={region}
+       countryCode={params.countryCode}
+       customer={customer}
+     />
+   )
+   ```
+
+7. Finally, connect `ChatWidget` component on product details page, e.g. `src/modules/products/templates/index.tsx`
+   
+   ```
+   <ChatWidget
+     // @ts-ignore
+     store={product.store}
+     customer={customer}
+     product={product}
+     chatPerProduct={true}
+   />
    ```
 
 ## How can I use it?
