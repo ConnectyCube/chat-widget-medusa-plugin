@@ -88,6 +88,8 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
     ```
     NEXT_PUBLIC_CHAT_APP_ID=<YOUR CONNECTYCUBE APP ID>
     NEXT_PUBLIC_CHAT_AUTH_KEY=<YOUR CONNECTYCUBE AUTH KEY>
+    NEXT_PUBLIC_STORE_ID=<YOUR MEDUSA STORE ID>
+    NEXT_PUBLIC_STORE_NAME=<YOUR MEDUSA STORE NAME>
     ```
     
 3. Create `src/ChatWidget.tsx` component with the following content:
@@ -97,17 +99,15 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
 
    import React, { useEffect, useState } from "react"
    import ConnectyCubeChatWidget from "@connectycube/chat-widget/react19"
-   import { AdminStore, StoreCustomer, StoreProduct } from "@medusajs/types"
+   import { StoreCustomer, StoreProduct } from "@medusajs/types"
     
    export interface ChatWidgetProps {
-     store: AdminStore
      customer: StoreCustomer | null
      product: StoreProduct
      chatPerProduct?: boolean
    }
     
    export default function ChatWidget({
-      store,
       customer,
       product,
       chatPerProduct,
@@ -125,9 +125,9 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
        ],
      }
 
-     if (!customer) {
+    if (!customer) {
        return null
-     }
+    }
 
     const [defaultChat, setDefaultChat] = useState<any>(null)
     const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -136,15 +136,18 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
       setIsOpen(isOpen)
     }
 
+    const storeId = process.env.NEXT_PUBLIC_STORE_ID
+    const storeName = process.env.NEXT_PUBLIC_STORE_NAME
+
     useEffect(() => {
       if (isOpen) {
         console.log("Widget is open:", isOpen)
-        const defaultChatKey = chatPerProduct ? product.id : store.id
-        const defaultChatName = chatPerProduct ? product.title : store.name
+        const defaultChatKey = chatPerProduct ? product.id : storeId
+        const defaultChatName = chatPerProduct ? product.title : storeName
   
         setDefaultChat({
           id: defaultChatKey,
-          opponentUserId: store.id,
+          opponentUserId: storeId,
           type: "group",
           name: defaultChatName,
         })
@@ -198,11 +201,6 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
      }
    }
    ```
-5. update `src/lib/data/products.ts`, `listProducts` function to return product's store fields:
-
-   ```typescript
-   fields: "*variants.calculated_price,+variants.inventory_quantity,+metadata,+tags,+*store",
-   ```
 
 6. update `storefront/src/app/[countryCode]/(main)/products/[handle]/page.tsx` to retrieve customer info and pass it to `ProductTemplate`:
 
@@ -222,8 +220,6 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
    
    ```typescript
    <ChatWidget
-     // @ts-ignore
-     store={product.store}
      customer={customer}
      product={product}
      chatPerProduct={true}
