@@ -4,36 +4,31 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
 
 ## Features
 
-- **Easy Integration:**
-  - Quickly plug the widget into your current web app with minimal setup.
-  - No need to handle backend infrastructure — ConnectyCube takes care of it.
-- **Customizable Interface:**
-  - Tailor the look and feel of the widget to match your brand identity.
-  - Modify styles, layout, and behavior to fit your UI/UX needs.
-- **Real-time Messaging:**
-  - Enjoy fast and reliable message delivery using ConnectyCube’s robust backend services.
-  - Support for private and group chat.
-- **Responsive Design:**
-  - Fully functional across all devices — desktops, tablets, and mobile phones.
-  - Optimized for various screen sizes and orientations.
-- **Modular and Extensible:**
-  - Adapt the widget’s functionality to meet your specific business requirements.
-  - Extend core features with custom logic and plugins.
-- **User Presence:**
-  - Display online/offline indicators for users in real time.
-  - Enhance user experience with presence-aware features.
-- **File Sharing:**
-  - Easily send and receive files, images, and other attachments during chat sessions.
+- **Easy Integration**
+  - Simple script to copy-paste on your website, no coding required
+  - No need to handle backend infrastructure — ConnectyCube takes care of it
+- **Superior feature set**
+  - Not just another basic chat widget - it's a complete chat system!
+- **Customizable UI**
+  - Modify colors, themes, and layout to match your brand’s design
+- **Real-time Messaging**
+  - Smooth, instant communication with no delays
+- **Moderation tools**
+  - Keep chats safe with message filtering, user bans, and admin controls
+- **Multimedia support**
+  - Send images, files, and emojis for richer conversations
 
 ## Installation
 
-1.  Add plugin:
+1. Add plugin to your Medusa 2.0 core app:
 
     ```
     yarn add @connectycube/chat-widget-medusa-plugin
     ```
 
-2.  Add the following variables to your `.env` file:
+2. Create [ConnectyCube account](https://connectycube.com/signup/) and application, obtain credentials
+
+3. Add the following variables to your `.env` file:
 
     ```
     VITE_BACKEND_URL=http://localhost:9000
@@ -75,6 +70,8 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
     ```bash
     yarn dev
     ```
+
+## How can I use it?
 
 ## DOCS
 
