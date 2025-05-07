@@ -1,6 +1,6 @@
-# chat-widget-medusa-plugin
+# Medusa 2.0 chat widget plugin 
 
-Medusa Plugin to integrate Chat Widget for seller/buyer communication
+Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
 
 ## Features
 
