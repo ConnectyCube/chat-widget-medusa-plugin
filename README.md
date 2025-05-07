@@ -226,6 +226,8 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
    />
    ```
 
+The complete demo app (backend + storefront) available https://github.com/ConnectyCube/chat-widget-medusa-plugin-demo-app
+
 ## How can I use it?
 
 ## DOCS
