@@ -28,7 +28,10 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
     yarn add @connectycube/chat-widget-medusa-plugin
     ```
 
-2. Create [ConnectyCube account](https://connectycube.com/signup/) and application, obtain credentials
+2.  Create ConnectyCube account [https://connectycube.com/signup](https://connectycube.com/signup/) and application, obtain credentials
+
+<img width="800" alt="Screenshot 2025-05-07 at 15 19 59" src="https://github.com/user-attachments/assets/77995af3-eb65-4559-8939-e3cc36104862" />
+
 
 3. Add the following variables to your `.env` file:
 
