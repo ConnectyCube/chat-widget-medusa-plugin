@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.13.0
+
+### Misc
+
+- updated `@connectycube/chat-widget` to `0.26.0`
+
 ## 0.12.0
 
 ### Misc
