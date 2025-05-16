@@ -27,14 +27,8 @@ const Chat = () => {
     );
   }
 
-  const embedViewStyles: React.CSSProperties = {
-    position: "relative",
-    display: "flex",
-    right: "0",
-    top: "0",
-    minWidth: "100%",
-    minHeight: "100%",
-    zIndex: "0",
+  const portalStyles: React.CSSProperties = {
+    minHeight: "calc(100vh - 110px)",
   };
 
   //@ts-ignore
@@ -51,8 +45,9 @@ const Chat = () => {
         userName={store.name}
         splitView={true}
         open={true}
+        embedView={true}
         hideWidgetButton={true}
-        portalStyle={embedViewStyles}
+        portalStyle={portalStyles}
         onUnreadCountChange={(count: number) =>
           console.log("unread messages count:", count)
         }

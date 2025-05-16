@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.14.0
+
+### Bug fixes
+
+- removed unneeded background from Chat page
+
 ## 0.13.0
 
 ### Misc
