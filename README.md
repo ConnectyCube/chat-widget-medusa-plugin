@@ -49,25 +49,25 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
 
     ```typescript
       module.exports = defineConfig({
-      admin: {
-        vite: (config) => {
-            config.define["__VITE_CHAT_APP_ID__"] = JSON.stringify(process.env.VITE_CHAT_APP_ID);
-            config.define["__VITE_CHAT_AUTH_KEY__"] = JSON.stringify(process.env.VITE_CHAT_AUTH_KEY);
-            return {
-                optimizeDeps: {
-                    include: ["qs", "eventemitter3", "@xmpp/iq/callee", "@xmpp/resolve", "@xmpp/session-establishment", "@xmpp/client-core", "@xmpp/sasl-plain", "@xmpp/stream-features", "@xmpp/resource-binding", "@xmpp/reconnect", "@xmpp/middleware", "@xmpp/sasl-anonymous", "@xmpp/websocket", "@xmpp/iq/caller", "@xmpp/sasl"], // Will be merged with config that we use to run and build the dashboard.
-                },
-            };
+        admin: {
+          vite: (config) => {
+              config.define["__VITE_CHAT_APP_ID__"] = JSON.stringify(process.env.VITE_CHAT_APP_ID);
+              config.define["__VITE_CHAT_AUTH_KEY__"] = JSON.stringify(process.env.VITE_CHAT_AUTH_KEY);
+              return {
+                  optimizeDeps: {
+                      include: ["qs", "eventemitter3", "@xmpp/iq/callee", "@xmpp/resolve", "@xmpp/session-establishment", "@xmpp/client-core", "@xmpp/sasl-plain", "@xmpp/stream-features", "@xmpp/resource-binding", "@xmpp/reconnect", "@xmpp/middleware", "@xmpp/sasl-anonymous", "@xmpp/websocket", "@xmpp/iq/caller", "@xmpp/sasl"], // Will be merged with config that we use to run and build the dashboard.
+                  },
+              };
+          },
         },
-      },
-      projectConfig: { ... },
-      plugins: [
-        {
-          resolve: "@connectycube/chat-widget-medusa-plugin",
-          options: {},
-        },
-      ],
-    })
+        projectConfig: { ... },
+        plugins: [
+          {
+            resolve: "@connectycube/chat-widget-medusa-plugin",
+            options: {},
+          },
+        ],
+      })
     ```
 
     This code connect plugin and helps to resolve an issue similar to [https://github.com/medusajs/medusa/issues/11248](https://github.com/medusajs/medusa/issues/11248).

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.14.1
+
+### Mick
+
+- updated `package.json` keywords
+
 ## 0.14.0
 
 ### Bug fixes
