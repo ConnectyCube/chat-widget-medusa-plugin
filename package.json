@@ -1,6 +1,6 @@
 {
   "name": "@connectycube/chat-widget-medusa-plugin",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "A chat widget Medusa plugin",
   "author": "Connectycube",
   "license": "Apache 2.0",
@@ -23,9 +23,10 @@
   "keywords": [
     "medusa",
     "plugin",
-    "medusa-plugin-other",
     "medusa-plugin",
-    "medusa-v2"
+    "medusa-v2",
+    "medusa-plugin-integration",
+    "medusa-plugin-other"
   ],
   "scripts": {
     "build": "medusa plugin:build",
