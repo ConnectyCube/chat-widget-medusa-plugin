@@ -205,7 +205,7 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
    }
    ```
 
-6. update `storefront/src/app/[countryCode]/(main)/products/[handle]/page.tsx` to retrieve customer info and pass it to `ProductTemplate`:
+5. update `storefront/src/app/[countryCode]/(main)/products/[handle]/page.tsx` to retrieve customer info and pass it to `ProductTemplate`:
 
    ```typescript
    const customer = await retrieveCustomer()
@@ -219,7 +219,7 @@ Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
    )
    ```
 
-7. Finally, connect `ChatWidget` component on product details page, e.g. `src/modules/products/templates/index.tsx`
+6. Finally, connect `ChatWidget` component on product details page, e.g. `src/modules/products/templates/index.tsx`
    
    ```typescript
    <ChatWidget
