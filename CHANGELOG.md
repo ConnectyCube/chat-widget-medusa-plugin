@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.14.3
+
+### Misc
+
+- README updated
+
 ## 0.14.2
 
 ### Misc
