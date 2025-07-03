@@ -1,8 +1,14 @@
 # Changelog
 
+## 0.14.2
+
+### Misc
+
+- updated `@connectycube/chat-widget` to `0.32.0`
+
 ## 0.14.1
 
-### Mick
+### Misc
 
 - updated `package.json` keywords
 
