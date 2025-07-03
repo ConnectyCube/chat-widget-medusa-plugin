@@ -2,6 +2,8 @@
 
 Medusa 2.0 plugin to integrate Chat Widget for seller/buyer communication
 
+<img width="1094" alt="Screenshot 2025-05-07 at 16 35 22" src="https://github.com/user-attachments/assets/af6acca9-6619-4d9f-b33a-ba9ccafcc03c" />
+
 ## Features
 
 - **Easy Integration**
